@@ -1,0 +1,19 @@
+.boton {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+    margin: 20px 0 10px 0;
+}
+
+.input {
+    background-color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* .boton:hover {
+    transform: scale(1.1);
+  } */

@@ -1,13 +1,18 @@
+import styles from "./Card.module.css"
+
 export default function Card({name, status, species, gender, origin, image, onclose }) {
    return (
-      <div>
+      <div className={styles.container}>
+      <div className={styles.divCard}>
+         <img className={styles.avatar} src={image} alt='Rick Sanchez' />
          <button onClick={onclose}>X</button>
-         <h2>{name}</h2>
-         <h2>{status}</h2>
-         <h2>{species}</h2>
-         <h2>{gender}</h2>
-         <h2>{origin}</h2>
-         <img src={image} alt='Rick Sanchez' />
+         <h2 className={styles.primerTitulo}>{name}</h2>
+         <h3 className={styles.titulos}>{status}</h3>
+         <h3 className={styles.titulos}>{species}</h3>
+         <h3 className={styles.titulos}>{gender}</h3>
+         <h3 className={styles.titulos}>{origin}</h3>
+         
+      </div>
       </div>
    );
 }
