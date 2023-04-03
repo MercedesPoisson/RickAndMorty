@@ -23,6 +23,7 @@ function App() {
             origin={Rick.origin.name}
             image={Rick.image}
             onClose={() => alert('Emulamos que se cierra la card')}
+            // className="rick-card"
          />
       </div>
    );
