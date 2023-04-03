@@ -1,8 +1,9 @@
 import Card from '../Card/Card.jsx';
+import styles from "./Cards.module.css";
 
 function Cards({characters}) {
    return (
-   <div>
+   <div className={styles.divCards}>
       {
       characters.map(({id, name, status, species, gender, origin, image}) => {
          return <Card 
@@ -13,7 +14,7 @@ function Cards({characters}) {
          gender={gender}
          origin={origin.name}
          image={image}
-         onClose={() => window.alert('Emulamos que se cierra la card')}
+         onClose={() => alert('Emulamos que se cierra la card')}
 
          />
       })
