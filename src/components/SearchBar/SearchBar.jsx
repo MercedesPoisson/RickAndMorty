@@ -6,6 +6,7 @@ function SearchBar({onSearch}) {
         <input placeholder="Buscar Personaje" className={styles.input}type='search' />
          <button className={styles.boton} onClick={onSearch}>BUSCAR</button>
       </div>
+      
    );
 }
 
