@@ -6,7 +6,7 @@ function Card({id, name, status, species, gender, origin, image, onClose }) {
          <div className={styles.container}>
       
          <img className={styles.avatar} src={image} alt='Rick Sanchez' />
-         <button onClick={onClose}>X</button>
+         <button onClick={() => onClose(id)}>X</button>
          <h2 className={styles.primerTitulo}>{name}</h2>
          <h3 className={styles.titulos} style={{ position: 'absolute', top: 0, right: 0 }}>
                {status}

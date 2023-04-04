@@ -6,7 +6,7 @@ function Cards({characters}) {
    return (
    <div className={styles.divCards}>
       {
-      characters.map(({id, name, status, species, gender, origin, image}) => {
+      characters.map(({id, name, status, species, gender, origin, image, onClose}) => {
          return ( <Card 
          key={id}
          id={id}
@@ -16,7 +16,7 @@ function Cards({characters}) {
          gender={gender}
          origin={origin.name}
          image={image}
-         onClose={() => alert('Emulamos que se cierra la card')}
+         onClose={onClose}
 
          />)
       })
