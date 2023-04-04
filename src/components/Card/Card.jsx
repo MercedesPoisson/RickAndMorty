@@ -1,6 +1,6 @@
 import styles from "./Card.module.css"
 
-export default function Card({id, name, status, species, gender, origin, image, onClose }) {
+function Card({id, name, status, species, gender, origin, image, onClose }) {
    return (
       <div className={styles.divCard} style={{ position: 'relative' }}>
          <div className={styles.container}>
@@ -19,3 +19,5 @@ export default function Card({id, name, status, species, gender, origin, image, 
       </div>
    );
 }
+
+export default Card;

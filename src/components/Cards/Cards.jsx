@@ -2,11 +2,11 @@ import Card from '../Card/Card.jsx';
 import styles from "./Cards.module.css";
 
 function Cards({characters}) {
-   const filteredCharacters = characters.filter((character) => character.id !== 1)
+   
    return (
    <div className={styles.divCards}>
       {
-      filteredCharacters.map(({id, name, status, species, gender, origin, image}) => {
+      characters.map(({id, name, status, species, gender, origin, image}) => {
          return ( <Card 
          key={id}
          id={id}
