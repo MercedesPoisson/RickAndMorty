@@ -1,12 +1,12 @@
 import Card from '../Card/Card.jsx';
 import styles from "./Cards.module.css";
 
-function Cards({characters}) {
+function Cards({characters, onClose}) {
    
    return (
    <div className={styles.divCards}>
       {
-      characters.map(({id, name, status, species, gender, origin, image, onClose}) => {
+      characters.map(({id, name, status, species, gender, origin, image}) => {
          return ( <Card 
          key={id}
          id={id}

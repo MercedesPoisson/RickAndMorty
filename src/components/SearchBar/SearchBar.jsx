@@ -12,7 +12,7 @@ function SearchBar({onSearch}) {
    return (
       <div>
         <input placeholder="Buscar Personaje" className={styles.input} type='search' value={id} onChange={handleChange} />
-         <button className={styles.boton} onClick={() => {onSearch(id); setId("")}}>Agregar</button>
+         <button className={styles.boton} onClick={() => {onSearch(id); setId('')}}>Agregar</button>
       </div>
       
    );
