@@ -7,6 +7,9 @@ import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail.jsx';
+
+// const API_KEY = "https://be-a-rym.up.railway.app/api7character";
+// const URL_BASE = "";
  
 function App() {
    const [characters, setCharacters] = useState([]);
@@ -14,6 +17,7 @@ function App() {
    
    
    const onSearch = (id) => {
+      // axios(`${URL_BASE}/${id}?{API_KEY}`)
       axios(`https://rickandmortyapi.com/api/character/${id}`)
       .then(response => response.data)
       .then((data) => {
@@ -38,17 +42,18 @@ function App() {
    //    const randomCharacter = characters[randomIndex];
    //    setCharacters((oldChars) => [...oldChars, randomCharacter]);
    // }
- 
+
+   
    return (
       <div className='App'>
-         
+                 
          <Nav onSearch={onSearch} />
-
+         
          <div className='title-image'>
          <img src='https://occ-0-5428-1740.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABWT5HIl9YXE1ZG5Khq2rGPAsxwcnKPhqJMO3E2WiZBVNemNHAlH148400SKvcFoxJFZsxLBpOCb31CliGnE3RYbxVAyHf10wyEfqZHliqF0z.png?r=a6e' />
          </div>
          {showImage && (
-            <div className='title-image'>
+            <div className='RickandMorty-image'>
                <img src='https://es.rollingstone.com/wp-content/uploads/2022/09/La-serie-Rick-y-Morty-podria-ser-eterna.jpg' />
             </div>
          )}

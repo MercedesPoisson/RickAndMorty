@@ -6,8 +6,8 @@ const Nav = ({onSearch, getRandomCharacter}) => {
     return (
         <nav>
             <SearchBar onSearch={onSearch}/>
-            <button className={styles.boton}><NavLink to="/about">About</NavLink></button>
-            <button className={styles.boton}><NavLink to="/home">Home</NavLink></button>
+            <button className={styles.navboton} ><NavLink to="/about">About</NavLink></button>
+            <button className={styles.navboton}><NavLink to="/home">Home</NavLink></button>
             {/* <button className={styles.boton} onClick={getRandomCharacter} >Random</button> */}
         </nav>
     )
