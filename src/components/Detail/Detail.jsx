@@ -1,14 +1,16 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Detail = () => {
-    const {detailId} = useParams();
-    const [data, setCharacter] = useState({});
+    const {id} = useParams();
+    const [character, setCharacter] = useState({});
 
     useEffect(() => {
-    axios(`https://rickandmortyapi.com/api/character/${detailId}`).then(({ data }) => {
+      // axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    .then(response => response.data)
+    .then((data) => {
        if (data.name) {
           setCharacter(data);
        } else {
@@ -16,17 +18,17 @@ const Detail = () => {
        }
     });
     return setCharacter({}); 
- }, [detailId]);
+ }, [id]); // array de dependencia tiene que estar si o si
 
     return(
         <div>
-            <h1>{data.name}</h1>
-            <p>{data.status}</p>
-            <p>{data.status}</p>
-            <p>{data.species}</p>
-            <p>{data.gender}</p>
-            <p>{data.origin.name}</p>
-            
+            <h1>{character?.name}</h1>
+            <p>{character?.status}</p>
+            <p>{character?.species}</p>
+            <p>{character?.gender}</p>
+            <p>{character?.origin?.name}</p>
+            <img src={character?.image} alt={character?.name} />
+        
         </div>
 
     )

@@ -17,7 +17,7 @@ function App() {
    
    
    const onSearch = (id) => {
-      // axios(`${URL_BASE}/${id}?{API_KEY}`)
+      // axios(`${URL_BASE}/${id}?key=${API_KEY}`)
       axios(`https://rickandmortyapi.com/api/character/${id}`)
       .then(response => response.data)
       .then((data) => {
@@ -60,7 +60,7 @@ function App() {
          <Routes>
             <Route path='/home' element={<Cards onClose={onClose} characters={characters} />} />
             <Route path='/about' element={<About/>} />
-            <Route path='/detail/:detailId' element={<Detail/>} />
+            <Route path='/detail/:id' element={<Detail/>} />
          </Routes>
       
          
