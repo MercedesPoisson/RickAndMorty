@@ -14,17 +14,3 @@ h1 {
    height: auto;
 }
 
-.RickandMorty-image img {
-   width: 40%;
-   height: auto;
-   border-radius: 10%;
-   border: 4px solid #02afc5;
-   
-} 
-
-/* .tv-effect {
-   filter: url("path/to/noise.png#tv"),
-           blur(1px),
-           brightness(50%);
- } */
-

@@ -1,0 +1,32 @@
+.Formimage img {
+    width: 100%;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+.Formulario {
+    background-color: #4cb5c3;
+    border: 2px solid #a9f3fd;
+    padding: 25px;
+    max-width: 300px; /* o cualquier otro valor que desees */
+    height: 40vh;
+    margin: 0 auto; /* para centrar horizontalmente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* agregar sombra para simular una tarjeta */
+    border-radius: 10px; /* agregar borde redondeado */
+  }
+
+  .Submit {
+    background-color: #a9f3fd;
+    border: 2px solid #a9f3fd;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+  }
+
+  .Label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+  }
+
+  .Error {
+    color: red;
+  }
