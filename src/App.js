@@ -8,10 +8,11 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail.jsx';
 import Form from './components/Form/Form';
+import video from './espacio-2381.mp4';
 
 
-const API_KEY = "0a9b7fd55434.d735a9319775188f7884";
-const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
+// const API_KEY = "0a9b7fd55434.d735a9319775188f7884";
+// const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
  
 function App() {
    const location = useLocation();
@@ -35,7 +36,8 @@ function App() {
    }, [access])
    
    const onSearch = (id) => {
-      axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+      // axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+      axios(`https://rickandmortyapi.com/api/character/${id}`)
       
       .then(response => response.data)
       .then((data) => {
@@ -63,25 +65,21 @@ function App() {
    
    return (
       <div className='App'>
+      <video autoPlay loop muted>
+        <source src={video} type='video/mp4' />
+      </video>
 
          <div className='title-image'>
          <img src='https://occ-0-5428-1740.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABWT5HIl9YXE1ZG5Khq2rGPAsxwcnKPhqJMO3E2WiZBVNemNHAlH148400SKvcFoxJFZsxLBpOCb31CliGnE3RYbxVAyHf10wyEfqZHliqF0z.png?r=a6e' />
          </div>
                  
          {location.pathname === '/' ? <Form login={login} /> : <Nav onSearch={onSearch} />}
-
-         
-         {/* {showImage && (
-            <div className='RickandMorty-image'>
-               <img src='https://es.rollingstone.com/wp-content/uploads/2022/09/La-serie-Rick-y-Morty-podria-ser-eterna.jpg' />
-            </div> */}
-         {/* )} */}
-
+                 
          <Routes>
             <Route path='/home' element={<Cards onClose={onClose} characters={characters} />} />
             <Route path='/about' element={<About/>} />
             <Route path='/detail/:id' element={<Detail/>} />
-            {/* <Route path='/' element={<Form/>} /> */}
+           
          </Routes>
       
          

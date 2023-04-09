@@ -34,7 +34,7 @@ const Form = ({ login }) => {
     
     
 
-    const image = 'https://www.latercera.com/resizer/6xg86UnIpeVu5PYgZ3E2GNn_ESg=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/SEWDAUGH3BENTDKGUGIQREJYS4.jpg'
+    const image = 'https://i.pinimg.com/originals/6e/0c/fd/6e0cfd6895c9cf2450c02900696cf336.jpg'
 
 
     return(
@@ -45,15 +45,22 @@ const Form = ({ login }) => {
             </div>
             <label className={styles.Label}>EMAIL</label><br />
             <input name='email' type='email' placeholder="Ingrese su mail" value={userData.email} onChange={handleChange} />
-            {errors.email && <span className={styles.Error}>{errors.email}</span>}
+            
             <br/>
 
             <label className={styles.Label}>PASSWORD</label><br />
             <input name='password' type='password' value={userData.password} onChange={handleChange} />
 
-            {errors.password && (<span className={styles.Error}>{errors.password}</span>)}
+            
             <br />
             <button className={styles.Submit} >SUBMIT</button>
+
+            <div>
+            {errors.email && <span className={styles.Error}>{errors.email}</span>}
+            <br />
+            {errors.password && (<span className={styles.Error}>{errors.password}</span>)}
+
+            </div>
         
         </form>
         </div>

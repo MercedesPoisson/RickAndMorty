@@ -1,5 +1,5 @@
 const Validation = (userData) => {
-    let errors ={};
+    const errors ={};
 
     if (!userData.email) {
         errors.email = 'El email no puede estar vacío';

@@ -1,7 +1,8 @@
+import styles from './About.module.css'
 const About = () => {
     return(
         <>
-        <h2>ABOUT </h2>
+        <h2 class>ABOUT </h2>
 
         </>
 

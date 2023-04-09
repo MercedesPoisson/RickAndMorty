@@ -1,12 +1,27 @@
 .App {
    text-align: center;
-   background-color: #87d1db;
-   /* width: auto; */
-   height: 100vh;
-}
+   /* height: 100vh; */
+   background: url('./espacio-2381.mp4') no-repeat center center fixed; 
+   /* Ajusta el tamaño del video según tus necesidades */
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+ video {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   object-fit: cover;
+ }
 
 h1 {
    color: #02afc5;
+   
 }
 
 .title-image img {
@@ -14,3 +29,7 @@ h1 {
    height: auto;
 }
 
+@font-face {
+  font-family: "rickandmorty";
+  src: ("./Fonts/get_schwifty.ttf");
+ }

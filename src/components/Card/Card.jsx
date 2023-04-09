@@ -1,6 +1,7 @@
 import styles from "./Card.module.css";
 import { Link } from 'react-router-dom';
 
+
 function Card({id, name, status, species, gender, origin, image, onClose }) {
    return (
       <div className={styles.divCard} style={{ position: 'relative' }}>
@@ -9,14 +10,14 @@ function Card({id, name, status, species, gender, origin, image, onClose }) {
       
          <button onClick={() => onClose(id)}>X</button>
       
-         <Link to={`/detail/${id}`}>
+         <Link to={`/detail/${id}`} className={styles.linkSinSubrayado}>
             <h2 className={styles.primerTitulo}>{name}</h2>
          </Link>
       
-         <h3 className={styles.titulos} >{status}</h3>
-         <h3 className={styles.titulos}>{species}</h3>
+         <button className={styles.statusButton} >{status}</button>
+         {/* <h3 className={styles.titulos}>{species}</h3>
          <h3 className={styles.titulos}>{gender}</h3>
-         <h3 className={styles.titulos}>{origin}</h3>
+         <h3 className={styles.titulos}>{origin}</h3> */}
          
       </div>
       </div>
