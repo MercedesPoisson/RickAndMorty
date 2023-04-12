@@ -40,4 +40,65 @@
     margin-top: -10px;
   }
 
+  /* nueva navBar */
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfcfc;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .navbar {
+    height: 60px;
+    background-color: #FB6467FF;
+    position: relative;
+  }
+    
+  
+  .navelements ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-weight: bold;
+  }
+  
+  .navelements ul li:not(:last-child) {
+    margin-right: 60px;
+  }
+  
+  .navelements ul a {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navelements ul a.active {
+    color: #574c4c;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .nav-elements ul a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #574c4c;
+  }
+
  
