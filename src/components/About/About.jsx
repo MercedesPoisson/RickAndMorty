@@ -1,14 +1,12 @@
 import styles from './About.module.css'
-import video from "./Rick&Morty API by Mechi.mp4"
+
+import imagen from "./Rick&Morty API by Mechi.gif"
 
 const About = () => {
     return(
         
         <div className={styles.VideoContainer}>
-        <video autoPlay loop muted >
-        <source src={video} type='video/mp4' />
-        </video>
-                
+          <img src={imagen}/>
         </div>
         // className={styles.Video}
 
