@@ -11,8 +11,8 @@ const Form = ({ login }) => {
     })
 
     const [errors, setErrors] = useState({
-        email: '',
-        password: ''
+        // email: '',
+        // password: ''
     })
 
     const handleChange = (event) => {        
@@ -24,7 +24,7 @@ const Form = ({ login }) => {
             ...userData,
             [event.target.name]: event.target.value
         }))
-    
+
     }
     
     const handleSubmit = (event) => { 
@@ -43,12 +43,12 @@ const Form = ({ login }) => {
             <div className={styles.Formimage}>
             <img src={image} />
             </div>
-            <label className={styles.Label}>EMAIL</label><br />
+            <label htmlFor="email" className={styles.Label}>EMAIL</label><br />
             <input name='email' type='email' placeholder="Ingrese su mail" value={userData.email} onChange={handleChange} />
             
             <br/>
 
-            <label className={styles.Label}>PASSWORD</label><br />
+            <label htmlFor="password" className={styles.Label}>PASSWORD</label><br />
             <input name='password' type='password' value={userData.password} onChange={handleChange} />
 
             

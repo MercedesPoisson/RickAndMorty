@@ -1,30 +1,43 @@
 .Navboton {
-    font-size: 20px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 8px 16px;
     border-radius: 5px;
-    color: #f7f07b;
-    margin: 20px 10px;
+    color: white;
+    margin: 10px 5px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    background-color: #02afc5;
-    border: 2px solid #02afc5;
+    background-color:  #FB6467FF;
+    border: none;
     z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: auto;
+       
+  }
+
+  .Navboton:hover {
+    background-color: rgba(251, 100, 103, 0.5);
   }
   
   .navContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
   }
   
   .navButtonsContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
     
   }
   
   .searchBarContainer {
     display: flex;
     justify-content: center;
+    margin-top: -10px;
   }
+
+ 

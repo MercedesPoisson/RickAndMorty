@@ -5,8 +5,8 @@
   align-items: center;
   border: 2px solid #f7f07b;
   border-radius: 5px;
-  margin-bottom: 0px;
-  margin-right: 0px;
+  
+  margin-right: -50px;
   padding: 10px;
   width: 300px ;
   margin-bottom: 10px;
@@ -14,8 +14,11 @@
   background-color: rgba(2, 175, 197, 0.8);
   text-align: center;
   transform: scale(0.8);
+  
  
   }
+
+
   /* .divCard::before {
     content: "";
     position: absolute;
@@ -55,6 +58,7 @@
     margin: 1rem;
     overflow: hidden;
     white-space: nowrap;
+    ;
       
       }
 

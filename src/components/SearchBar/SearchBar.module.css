@@ -4,22 +4,28 @@
 }
 
 .boton {
-    font-size: 20px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 8px 16px;
     border-radius: 5px;
-    height: 50px;    
-    background-color: #02afc5;
-    color: #f7f07b;
-    transition: all 0.3s ease;
-    margin: 20px 0 10px 0;
+    background-color:  #FB6467FF;
+    color: white;
+    font-weight: bold;
+    margin: 10px 5px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    border: none;
+    cursor: auto;
 }
+
+.boton:hover {
+    background-color: rgba(251, 100, 103, 0.5);
+  }
 
 .input {
     background-color: white;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px;
     border-radius: 5px;
-    height: 50px;
+    height: 40px;
     
 }
 

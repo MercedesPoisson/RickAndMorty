@@ -1,8 +1,33 @@
 import styles from "./Card.module.css";
 import { Link } from 'react-router-dom';
+// import font from "..\Fonts\get_schwifty.ttf";
+import { addFav, removeFav } from "../../redux/actions";
+import { connect } from "react-redux";
+import { useState, useEffect } from "react";
 
 
-function Card({id, name, status, species, gender, origin, image, onClose }) {
+function Card({id, name, status, species, gender, origin, image, onClose, myFavorites, addFav, removeFav }) {
+
+   const [ isFav, setIsFav ] = useState(false);
+
+   useEffect(() => {
+      setIsFav(myFavorites.some((character) => character.id === id));
+    }, [myFavorites, id]);
+
+   const handleAddToFavorites = () => {
+      addFav({ id, name, status, species, gender, origin, image });
+      setIsFav(true);
+    };
+  
+    const handleRemoveFromFavorites = () => {
+      removeFav(id);
+      setIsFav(false);
+    };
+  
+    const isCharacterFav = myFavorites.some((character) => character.id === id);
+
+    
+  
    return (
       <div className={styles.divCard} style={{ position: 'relative' }}>
          <div className={styles.container}>
@@ -19,9 +44,26 @@ function Card({id, name, status, species, gender, origin, image, onClose }) {
          <h3 className={styles.titulos}>{gender}</h3>
          <h3 className={styles.titulos}>{origin}</h3> */}
          
+         {
+            isFav ? (
+               <button onClick={handleRemoveFromFavorites}>❤️</button>
+            ) : (
+               <button onClick={handleAddToFavorites}>🤍</button>
+            )
+         }
+         
       </div>
       </div>
    );
 }
 
-export default Card;
+const mapStateToProps = (state) => ({
+   myFavorites: state.myFavorites,
+ });
+ 
+ const mapDispatchToProps = {
+   addFav,
+   removeFav,
+ };
+ 
+ export default connect(mapStateToProps, mapDispatchToProps)(Card);
