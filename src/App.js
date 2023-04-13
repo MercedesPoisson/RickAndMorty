@@ -11,8 +11,8 @@ import Form from './components/Form/Form';
 import video from './espacio-2381.mp4';
 import Favorites from "./components/Favorites/Favorites"
 
-// const API_KEY = "0a9b7fd55434.d735a9319775188f7884";
-// const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
+const API_KEY = "0a9b7fd55434.d735a9319775188f7884";
+const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
  
 function App() {
    const location = useLocation();
@@ -36,8 +36,8 @@ function App() {
    }, [access, navigate])
    
    const onSearch = (id) => {
-      // axios(`${URL_BASE}/${id}?key=${API_KEY}`)
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+      // axios(`https://rickandmortyapi.com/api/character/${id}`)
       
       .then(response => response.data)
       .then((data) => {
@@ -76,10 +76,10 @@ function App() {
       <video autoPlay loop muted>
         <source src={video} type='video/mp4' />
       </video>
-
-         <div className='title-image'>
+{
+         location.pathname === '/' ? <div className='title-image'>
          <img src='https://occ-0-5428-1740.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABWT5HIl9YXE1ZG5Khq2rGPAsxwcnKPhqJMO3E2WiZBVNemNHAlH148400SKvcFoxJFZsxLBpOCb31CliGnE3RYbxVAyHf10wyEfqZHliqF0z.png?r=a6e' alt='Login Rick'/>
-         </div>
+         </div> : <Nav onSearch={onSearch} setAccess={setAccess}/>}
                  
          {location.pathname === '/' ? <Form login={login} /> : <Nav onSearch={onSearch} setAccess={setAccess} />}
                  
