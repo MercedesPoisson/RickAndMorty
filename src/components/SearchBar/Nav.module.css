@@ -1,4 +1,4 @@
-.Navboton {
+/* .Navboton {
     font-size: 16px;
     padding: 8px 16px;
     border-radius: 5px;
@@ -11,12 +11,12 @@
     text-decoration: none;
     font-weight: bold;
     cursor: auto;
-       
-  }
-
+        */
+  /* } */
+/* 
   .Navboton:hover {
     background-color: rgba(251, 100, 103, 0.5);
-  }
+  } */
   
   .navContainer {
     display: flex;
