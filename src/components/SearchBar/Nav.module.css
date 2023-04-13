@@ -31,13 +31,15 @@
     align-items: center;
     margin-bottom: 10px;
     text-decoration: none;
-    
+        
   }
   
   .searchBarContainer {
     display: flex;
     justify-content: center;
     margin-top: -10px;
+    justify-content: flex-end;
+    flex: 1;
   }
 
   /* nueva navBar */
@@ -57,12 +59,19 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    
   }
   
   .navbar {
+    display: flex;
+    align-items: center;
     height: 60px;
     background-color: #FB6467FF;
-    position: relative;
+    position: fixed;
+    top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   }
     
   

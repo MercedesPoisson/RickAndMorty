@@ -9,11 +9,11 @@
     border-radius: 5px;
     background-color:  #FB6467FF;
     color: white;
-    font-weight: bold;
+    font-weight: 400;
     margin: 10px 5px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     border: none;
-    cursor: auto;
+    cursor: pointer;
 }
 
 .boton:hover {

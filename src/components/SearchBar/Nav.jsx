@@ -6,26 +6,14 @@ const Nav = ({onSearch, setAccess}) => {
     const navigate = useNavigate();
 
     const handleLogOut = () => {
+      
       setAccess(false);
         navigate("/");
     }
     return (
         <nav className={styles.navContainer}>
-          <div className={styles.navButtonsContainer}>
-          <NavLink to="/home" className={styles.Navboton}>HOME</NavLink>
-          <NavLink to="/favorites"  className={styles.Navboton}>FAVORITES</NavLink>
-          <NavLink to="/about" className={styles.Navboton}>ABOUT</NavLink>
-                     
-            <button className={styles.Navboton} onClick={handleLogOut}>LOGOUT</button>
-                      
-            {/* <button className={styles.Navboton} onClick={getRandomCharacter}>RANDOM</button> */}
-          </div>
-          <div className={styles.searchBarContainer}>
-            <SearchBar onSearch={onSearch} />
-            {/* <Nav onSearch={onSearch} getRandomCharacter={getRandomCharacter} /> */}
-          </div>
-          <nav className={styles.navbar}>
-         <div className={styles.container}>
+          <nav className={styles.navbar} style={{ position: "fixed", width: "100%" }}>
+         <div className={styles.container} style={{ display: "flex" }}>
           <div className={styles.navelements}>
             <ul>
               <li ><NavLink to="/home" >HOME</NavLink></li>
@@ -36,10 +24,33 @@ const Nav = ({onSearch, setAccess}) => {
              </ul>
           </div>
           </div>
+
+          <div className={styles.searchBarContainer} style={{ marginLeft: "auto" }}>
+                    <SearchBar onSearch={onSearch} />
+                    </div>
+
+
         </nav>
+        
+          {/* <div className={styles.navButtonsContainer}>
+          <NavLink to="/home" className={styles.Navboton}>HOME</NavLink>
+          <NavLink to="/favorites"  className={styles.Navboton}>FAVORITES</NavLink>
+          <NavLink to="/about" className={styles.Navboton}>ABOUT</NavLink>
+                     
+            <button className={styles.Navboton} onClick={handleLogOut}>LOGOUT</button>
+                      
+            
+          </div>
+          <div className={styles.searchBarContainer}>
+            <SearchBar onSearch={onSearch} />
+            
+          </div> */}
+          
         </nav>
       );
     };
+    // {/* <button className={styles.Navboton} onClick={getRandomCharacter}>RANDOM</button> */}
+    // {/* <Nav onSearch={onSearch} getRandomCharacter={getRandomCharacter} /> */}
 
         
       

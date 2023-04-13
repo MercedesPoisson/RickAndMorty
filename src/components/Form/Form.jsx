@@ -38,10 +38,13 @@ const Form = ({ login }) => {
 
 
     return(
+
+        
         <div className={styles.Formulario}>
+            
         <form onSubmit={handleSubmit}>
             <div className={styles.Formimage}>
-            <img src={image} />
+            <img src={image} alt='Form Rick'/>
             </div>
             <label htmlFor="email" className={styles.Label}>EMAIL</label><br />
             <input name='email' type='email' placeholder="Ingrese su mail" value={userData.email} onChange={handleChange} />

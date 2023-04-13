@@ -1,0 +1,46 @@
+h1 {
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+div {
+    position: relative;
+    /* margin-top: 30px; */
+}
+
+.orderselect,
+.filterselect {
+  position: absolute;
+  z-index: 1;
+  padding: 8px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  background-color: white;
+  
+}
+
+.orderselect:focus,
+.filterselect:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+.orderselect option,
+.filterselect option {
+  font-size: 16px;
+  background-color: white;
+  color: black;
+}
+
+.orderselect {
+    position: relative;
+    top: 40px;
+    /* resto de las propiedades CSS */
+  }
+  
+  .filterselect {
+    position: relative;
+    top: 40px;
+    /* resto de las propiedades CSS */
+  }

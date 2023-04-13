@@ -37,8 +37,7 @@ function App() {
    
    const onSearch = (id) => {
       axios(`${URL_BASE}/${id}?key=${API_KEY}`)
-      // axios(`https://rickandmortyapi.com/api/character/${id}`)
-      
+            
       .then(response => response.data)
       .then((data) => {
          if (data.name) {

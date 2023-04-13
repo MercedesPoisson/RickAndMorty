@@ -10,10 +10,6 @@ function Card({id, name, status, species, gender, origin, image, onClose, myFavo
 
    const [ isFav, setIsFav ] = useState(false);
 
-   useEffect(() => {
-      setIsFav(myFavorites.some((character) => character.id === id));
-    }, [myFavorites, id]);
-
    const handleAddToFavorites = () => {
       addFav({ id, name, status, species, gender, origin, image });
       setIsFav(true);
@@ -23,11 +19,14 @@ function Card({id, name, status, species, gender, origin, image, onClose, myFavo
       removeFav(id);
       setIsFav(false);
     };
-  
-    const isCharacterFav = myFavorites.some((character) => character.id === id);
 
-    
-  
+    useEffect(() => {
+      setIsFav(myFavorites.some((character) => character.id === id));
+    }, [myFavorites, id]);
+
+   // const isCharacterFav = myFavorites.some((character) => character.id === id);
+     
+     
    return (
       <div className={styles.divCard} style={{ position: 'relative' }}>
          <div className={styles.container}>
@@ -43,27 +42,32 @@ function Card({id, name, status, species, gender, origin, image, onClose, myFavo
          {/* <h3 className={styles.titulos}>{species}</h3>
          <h3 className={styles.titulos}>{gender}</h3>
          <h3 className={styles.titulos}>{origin}</h3> */}
-         
-         {
+
+{
             isFav ? (
                <button onClick={handleRemoveFromFavorites}>❤️</button>
             ) : (
                <button onClick={handleAddToFavorites}>🤍</button>
             )
          }
-         
+                   
       </div>
       </div>
    );
 }
 
-const mapStateToProps = (state) => ({
-   myFavorites: state.myFavorites,
- });
+const mapStateToProps = (state) => {
+   return {
+      myFavorites: state.myFavorites,
+   }
+ };
  
- const mapDispatchToProps = {
-   addFav,
-   removeFav,
+ const mapDispatchToProps = (dispatch) => {
+   return {
+     addFav: (character) => {dispatch(addFav(character))},
+     removeFav: (id) => {dispatch(removeFav(id))}
+   }
+   
  };
  
  export default connect(mapStateToProps, mapDispatchToProps)(Card);
