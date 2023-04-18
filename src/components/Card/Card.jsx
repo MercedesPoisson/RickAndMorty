@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { addFav, removeFav } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
+import { TiHeart, TiHeartOutline } from "react-icons/ti";
+import { AiFillCloseSquare } from "react-icons/ai";
 
 
 function Card({id, name, status, species, gender, origin, image, onClose, myFavorites, addFav, removeFav }) {
@@ -32,7 +34,9 @@ function Card({id, name, status, species, gender, origin, image, onClose, myFavo
          <div className={styles.container}>
          <img className={styles.avatar} src={image} alt='Rick Sanchez' />
       
-         <button onClick={() => onClose(id)}>X</button>
+         <button className={styles.closeButton} onClick={() => onClose(id)}>
+   <AiFillCloseSquare className={styles.closeIcon} />
+</button>
       
          <Link to={`/detail/${id}`} className={styles.linkSinSubrayado}>
             <h2 className={styles.primerTitulo}>{name}</h2>
@@ -44,12 +48,16 @@ function Card({id, name, status, species, gender, origin, image, onClose, myFavo
          <h3 className={styles.titulos}>{origin}</h3> */}
 
 {
-            isFav ? (
-               <button onClick={handleRemoveFromFavorites}>❤️</button>
-            ) : (
-               <button onClick={handleAddToFavorites}>🤍</button>
-            )
-         }
+   isFav ? (
+      <button className={styles.favoriteButton} onClick={handleRemoveFromFavorites}>
+         <TiHeart className={styles.heartIcon}/> 
+      </button>
+   ) : (
+      <button className={styles.favoriteButton} onClick={handleAddToFavorites}>
+         <TiHeartOutline className={styles.heartIcon}/>
+      </button>
+   )
+}
                    
       </div>
       </div>

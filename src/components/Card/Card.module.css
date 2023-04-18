@@ -11,13 +11,12 @@
   padding: 10px;
   width: 300px ;
   margin-bottom: -60px;
-  max-height: 350px;
+  max-height: 380px;
   background-color: rgba(2, 175, 197, 0.8);
   text-align: center;
   transform: scale(0.8);
   
- 
-  }
+ }
 
   .container {
   display: flex;
@@ -82,7 +81,7 @@ h3 {
   height: 200px;
   position: relative;
   transition: transform 0.5s ease;
-  box-shadow: 0 0 30px #479f78;
+  
 }
 
 .statusButton {
@@ -99,4 +98,17 @@ h3 {
 .avatar:hover {
   animation: rotate 2s linear forwards, unrotate 1s linear forwards;
   transform: rotate(360deg) scale(1.2);
+}
+
+.heartIcon {
+  color: #FB6467FF;
+  font-size: 2em;
+  background: none;  
+
+}
+
+.closeIcon {
+  font-size: 1.5em;
+  color: #FB6467FF;
+  font-size: 2em;
 }
