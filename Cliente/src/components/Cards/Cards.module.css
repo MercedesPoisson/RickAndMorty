@@ -1,0 +1,10 @@
+/* .divCards {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-gap: 100px;
+   max-width: 1500px;
+   margin: 0 auto;
+   height: auto;
+   position: relative;
+   
+} */

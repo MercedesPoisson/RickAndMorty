@@ -1,0 +1,60 @@
+.App {
+   text-align: center;
+   /* height: 100vh; */
+   background: url('./espacio-2381.mp4') no-repeat center center fixed; 
+   /* Ajusta el tamaño del video según tus necesidades */
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+ video {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   object-fit: cover;
+ }
+
+h1 {
+   color: #02afc5;
+   
+}
+
+.title-image img {
+   width: 20%;
+   height: auto;
+}
+
+@font-face {
+  font-family: "rickandmorty";
+  src: ("./Fonts/get_schwifty.ttf");
+ }
+
+ body{
+   background-color: #000;
+}
+
+.main{
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   height: 1px;
+   width: 1px;
+   background-color: #fff;
+   border-radius: 50%;
+   box-shadow: -24vw -44vh 2px 2px #fff,38vw -4vh 0px 0px #fff,-20vw -48vh 1px 2px #fff,-39vw 38vh 3px 1px #fff,-42vw -11vh 0px 3px #fff,12vw 15vh 3px 3px #fff,42vw 6vh 3px 2px #fff,-8vw 9vh 0px 2px #fff,34vw -38vh 1px 0px #fff,-17vw 45vh 3px 1px #fff,22vw -36vh 3px 2px #fff,-42vw 1vh 1px 0px #fff;
+   animation: zoom 10s alternate infinite;
+}
+
+@keyframes zoom {
+   0%{
+       transform: scale(1);
+   }
+   100%{
+       transform: scale(1.5);
+   }
+}
