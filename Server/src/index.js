@@ -8,8 +8,14 @@ http.createServer((request, response) => {
     if(url.includes("rickandmorty/character/")){
         const id = url.split("/").at(-1);
         const character = data.find((char) => char.id == id);
-
-        response.end(`Estoy en la ruta con el ID ${id}`);
+        
+        if(character) {
+        response.writeHead(200, {"Content-Type": "application/json"});
+        response.end(JSON.stringify(character));
+    } else {
+        response.writeHead(404, {"Content-Type": "application/json"});
+        return response.end(JSON.stringify({error: "Character not found"}));
+      }
     }
     
 })
