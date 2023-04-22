@@ -1,4 +1,5 @@
-
+const {router} = require("express");
+const router = Router();
 
 const login = (req, res) => {
     const { email, password } = req.query;
@@ -11,5 +12,7 @@ const login = (req, res) => {
     res.status(200).json({ access: false });
   }
 };
+
+router.get("/", login);
 
 module.exports = login;
