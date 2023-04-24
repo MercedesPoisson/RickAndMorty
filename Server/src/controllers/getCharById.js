@@ -3,33 +3,32 @@ require("dotenv").config()
 
 const URL = process.env.API_URL;
 
-
 const STATUS_OK = 200;
 const STATUS_ERROR = 404;
 
 function getCharById(req, res) {
     const { id } = req.params
-    try {
-    axios.get(`${URL}${id}`).then(({data}) => {
-      if(data){
+
+    axios.get(`${URL}${id}`)
+    .then(response => response.data)
+    .then(({id, status, name, species, origin, image, gender}) => {
+      if(name){
       const character = { 
-        id: data.id,
-        status: data.status,
-        name: data.name,
-        species: data.species,
-        origin: data.origin.name,
-        image: data.image,
-        gender: data.gender
-      };
-      res.status(STATUS_OK).json(character)
-      } else {
-        res.status(STATUS_ERROR).json({message: "Character not Found"})
-      }   
-    });
-    } catch (error) {
-      return res.status(500).json({message: "error"})
+        id,
+        status,
+        name,
+        species,
+        origin,
+        image,
+        gender
+       };
+      return res.status(STATUS_OK).json(character)
+      }; 
+      return res.status(STATUS_ERROR).send("Character not Found")  
+    })
+    .catch(error => res.status(500).send(error.message))
     }
-  }
+  
 
 
   module.exports = {
