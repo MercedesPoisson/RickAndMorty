@@ -6,10 +6,11 @@ const URL = process.env.API_URL;
 const STATUS_OK = 200;
 const STATUS_ERROR = 404;
 
-function getCharById(req, res) {
+async function getCharById(req, res) {
+  try {
     const { id } = req.params
 
-    axios.get(`${URL}${id}`)
+    await axios.get(`${URL}${id}`)
     .then(response => response.data)
     .then(({id, status, name, species, origin, image, gender}) => {
       if(name){
@@ -26,7 +27,11 @@ function getCharById(req, res) {
       }; 
       return res.status(STATUS_ERROR).send("Character not Found")  
     })
-    .catch(error => res.status(500).send(error.message))
+   
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+    
     }
   
 
