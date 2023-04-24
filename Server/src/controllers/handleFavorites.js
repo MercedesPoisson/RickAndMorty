@@ -1,18 +1,48 @@
-const {router} = require("express");
-const router = Router();
+require("dotenv").config();
+
+const STATUS_OK = 200;
+const STATUS_ERROR = 404;
 
 let myFavorites = [];
 
-const postFav = (req, res) => {
-    const character = req.body;
-    myFavorites.push(character);
-    res.status(200).json(myFavorites);
+function postFav(req, res){
+    const {id, name, status, species, gender, origin, image } = req.body;
+    
+    try {
+      if(!id || !name || !status || !species || !gender || !origin || !image){
+        return res.status(STATUS_ERROR).json({message: "DATA is missing"})
+      }
+      const character = {
+        id, 
+        name, 
+        status, 
+        species, 
+        gender, 
+        origin, 
+        image
+      }
+      myFavorites.push(character);
+      res.status(STATUS_OK).json(myFavorites);
+    } catch(error) {
+        res.status(STATUS_ERROR).json({message: error})
+    } 
   };
   
-  const deleteFav = (req, res) => {
+  function deleteFav(req, res){
     const { id } = req.params;
-    myFavorites = myFavorites.filter((c) => c.id != id);
-    res.status(200).json(myFavorites);
+    try {
+      if(!id){
+        return res.status(STATUS_ERROR).json({message: "ID NOT Found"})
+      }
+      const newFavorite = myFavorites.filter((ch) => ch.id != Number(id));
+      myFavorites = newFavorite
+      res.status(STATUS_OK).json(myFavorites);
+    } catch (error) {
+      res.status(STATUS_ERROR).json({message: error})
+    }
   };
   
-  module.exports = { postFav, deleteFav };
+  module.exports = { 
+    postFav, 
+    deleteFav 
+  };
