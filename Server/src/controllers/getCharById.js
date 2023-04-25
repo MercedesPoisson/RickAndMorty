@@ -3,36 +3,30 @@ require("dotenv").config()
 
 const URL = process.env.API_URL;
 
-const STATUS_OK = 200;
-const STATUS_ERROR = 404;
-
-async function getCharById(req, res) {
+const getCharById = async (req, res) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
+    const { data } = await axios(`${URL}${id}`)
 
-    await axios.get(`${URL}${id}`)
-    .then(response => response.data)
-    .then(({id, status, name, species, origin, image, gender}) => {
-      if(name){
-      const character = { 
-        id,
-        status,
-        name,
-        species,
-        origin,
-        image,
-        gender
-       };
-      return res.status(STATUS_OK).json(character)
-      }; 
-      return res.status(STATUS_ERROR).send("Character not Found")  
-    })
-   
-  } catch (error) {
-    res.status(500).send(error.message)
-  }
+    if(!data.name) throw new Error(`Faltan datos del personaje con ID: ${id}`)  
     
-    }
+        const character = { 
+        id: data.id,
+        status: data.status,
+        name: data.name,
+        species: data.species,
+        origin: data.origin,
+        image: data.image,
+        gender: data.gender
+       };
+      return res.status(200).json(character)
+        
+} catch (error) {
+    return error.message.includes("ID")
+    ? res.status(404).send(error.message)
+    : res.status(500).send(error.response.data.error)
+  }
+  }
   
   module.exports = {
     getCharById
